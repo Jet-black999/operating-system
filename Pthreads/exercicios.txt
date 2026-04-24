@@ -1,0 +1,48 @@
+1. Faça um programa que crie dois processos com fork
+no Linux e:
+• Escreve "Eu sou o pai" no processo pai.
+• Escreve "Eu sou o 1º filho" no primeiro filho.
+• Escreve "Eu sou o 2º filho" no segundo filho.
+
+-----------
+2. Considerando um array de 1000 posições (sem números
+repetidos), faça um programa para:
+• Ler um número.
+• Criar 5 processos filhos (com fork) e esperar que os
+filhos terminem.
+• Cada processo filho, procura o número em 200 posições
+diferentes.
+• O processo que encontrar o número, deve imprimir a
+posição do array onde se encontra. Também deve
+imprimir o número do processo (1, 2, 3, 4, 5).
+• Os processos que não encontrarem o número devem
+imprimir o valor 0.
+-------------
+3. Faça um programa que crie, com a primitiva fork,
+cinco processos filhos e cada processo filho escreve
+200 números:
+• 1º processo: 1 .. 200
+• 2º processo: 201 .. 400
+• 3º processo: 401 .. 600
+• 4º processo: 601 .. 800
+• 5º processo: 801 .. 1000
+• O processo pai tem que esperar que todos os
+processos filho terminem.
+---------------
+4. Considerando um array dados e um array resultado,
+de inteiros com mil posições, escreva um programa
+que cria um processo filho, com fork, e faz o seguinte:
+• Os dois processos (pai e filho) fazem o cálculo:
+resultado[i] = dados[i]*4 + 20.
+• Cada processo é responsável pelo cálculo de 500
+posições do array dados, colocando o resultado no
+array resultado.
+• Os resultados devem ser apresentados segundo a
+ordem do array (de 0 a 499 e depois de 500 a 999).
+
+--------------------------------------------------
+5. Escrever os programas dos exercícios 2, 3 e 4 com
+threads POSIX.
+
+
+

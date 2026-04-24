@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "OpenAI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -3.2, "left": -7.2, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btnStartStop", "top": -115.2, "left": -105.6, "attrs": { "color": "green", "xray": "1" } },
+    { "type": "wokwi-slide-switch", "id": "swSeat", "top": 120.8, "left": -124.4, "attrs": { "xray": "1" } },
+    { "type": "wokwi-hc-sr04", "id": "sonar", "top": -141.6, "left": 168, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "potTemp", "top": 150, "left": 176, "attrs": { "value": "1900" } },
+    { "type": "wokwi-potentiometer", "id": "potNoise", "top": 150, "left": 300, "attrs": { "value": "1200" } },
+    { "type": "wokwi-led", "id": "ledGreen", "top": -138, "left": -240, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "ledYellow", "top": -99.6, "left": -240, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "ledRed", "top": -61.2, "left": -240, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "buzz", "top": 18, "left": -244.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:VIN", "sonar:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "sonar:GND", "black", [ "v0" ] ],
+    [ "esp:5", "sonar:TRIG", "green", [ "h0" ] ],
+    [ "esp:18", "sonar:ECHO", "blue", [ "h0" ] ],
+
+    [ "esp:4", "btnStartStop:1.l", "green", [ "v0" ] ],
+    [ "esp:GND.2", "btnStartStop:2.r", "black", [ "v0" ] ],
+
+    [ "esp:19", "swSeat:2", "green", [ "v0" ] ],
+    [ "esp:GND.2", "swSeat:1", "black", [ "h0" ] ],
+
+    [ "esp:34", "potTemp:SIG", "orange", [ "v0" ] ],
+    [ "esp:3V3", "potTemp:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.2", "potTemp:GND", "black", [ "v0" ] ],
+
+    [ "esp:35", "potNoise:SIG", "orange", [ "v0" ] ],
+    [ "esp:3V3", "potNoise:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.2", "potNoise:GND", "black", [ "v0" ] ],
+
+    [ "esp:25", "ledGreen:A", "green", [ "v0" ] ],
+    [ "esp:GND.1", "ledGreen:C", "black", [ "v0" ] ],
+    [ "esp:26", "ledYellow:A", "yellow", [ "v0" ] ],
+    [ "esp:GND.1", "ledYellow:C", "black", [ "v0" ] ],
+    [ "esp:27", "ledRed:A", "red", [ "v0" ] ],
+    [ "esp:GND.1", "ledRed:C", "black", [ "v0" ] ],
+
+    [ "esp:23", "buzz:1", "purple", [ "v0" ] ],
+    [ "esp:GND.1", "buzz:2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
