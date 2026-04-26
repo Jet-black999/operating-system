@@ -5,3 +5,14 @@
 #define NTHREADS 20
 
 
+
+
+int main() 
+
+{
+ phtread_thereads[NTHREADS];
+ int i,status;
+
+for(i=0;i<)
+
+}

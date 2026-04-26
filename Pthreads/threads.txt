@@ -1,0 +1,25 @@
+Pthreads 
+criadno a thread
+
+int pthread_create( pthread_t *thid, const pthread_attr_t
+*atrib, void *(*funcao), void *args );
+
+•thid: contém, no retorno da chamada, o identificador da thread criada;
+• atrib: permite definir atributos especiais (política de escalonamento da
+thread, escopo de execução da thread) . Se for passado o argumento
+NULL, são utilizados os atributos default;
+• função: identifica o código que será executado pela thread;
+• args: contém o endereço de memória dos dados passados como
+parâmetros para a thread criada.
+
+com pthread_create()
+    continua existindo um único processo
+    as duas execuções têm o mesmo PID
+    as execuções têm TIDs diferentes
+    memória compartilhada
+
+com fork()
+    passam a existir dois processos
+    pai e filho têm PIDs diferentes
+    cada processo tem seu próprio espaço de memória
+    a relação pai-filho existe no nível de processo
