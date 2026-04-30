@@ -4,6 +4,11 @@ no Linux e:
 • Escreve "Eu sou o 1º filho" no primeiro filho.
 • Escreve "Eu sou o 2º filho" no segundo filho.
 
+Resposta:
+
+
+
+
 -----------
 2. Considerando um array de 1000 posições (sem números
 repetidos), faça um programa para:

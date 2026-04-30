@@ -1,18 +1,50 @@
-/* fazer 2 forks no linux escrevre processo pai e filho  */
+/* Exercicio 1: cria dois processos com fork no Linux.
+   - pai imprime "Eu sou o pai"
+   - primeiro filho imprime "Eu sou o 1º filho"
+   - segundo filho imprime "Eu sou o 2º filho" */
 
-#include<stidio.h>
-#include<pthread.h>
-#define NTHREADS 20
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h> // Para fork
+#include <sys/types.h> // Para pid_t
+#include <sys/wait.h> // Para wait
 
-
-
-
-int main() 
-
+int main(void)
 {
- phtread_thereads[NTHREADS];
- int i,status;
+    pid_t pid1, pid2;
+    int status;
 
-for(i=0;i<)
+    pid1 = fork();
+    if (pid1 < 0) {
+        perror("fork");
+        return EXIT_FAILURE;
+    }
 
+    if (pid1 == 0) {
+        /* Primeiro filho */
+        printf("Eu sou o 1º filho\n");
+        return EXIT_SUCCESS;
+    }
+
+    /* Executado apenas pelo pai */
+    pid2 = fork();
+    if (pid2 < 0) {
+        perror("fork");
+        return EXIT_FAILURE;
+    }
+
+    if (pid2 == 0) {
+        /* Segundo filho */
+        printf("Eu sou o 2º filho\n");
+        return EXIT_SUCCESS;
+    }
+
+    /* Pai */
+    printf("Eu sou o pai\n");
+
+    /* Espera pelos dois filhos terminarem */
+    while (wait(&status) > 0)
+        ;
+
+    return EXIT_SUCCESS;
 }
