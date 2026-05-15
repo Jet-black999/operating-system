@@ -1,0 +1,45 @@
+main do C é a thread principal 
+
+| Conceito    | Processo com `fork()`     | Thread com `pthread_create()`  |
+| ----------- | ------------------------- | ------------------------------ |
+| Cria        | Novo processo             | Nova thread                    |
+| Memória     | Separada                  | Compartilhada                  |
+| Comunicação | Mais difícil              | Mais simples                   |
+| Custo       | Maior                     | Menor                          |
+| Isolamento  | Maior                     | Menor                          |
+| Exemplo     | Pai e filho independentes | Duas tarefas no mesmo programa |
+ 
+
+ #Include <p.thread> fornce as seguintes funções:
+    pthread_create()
+        Cria a thread 
+    pthread_join()
+
+    pthread_exit()
+
+    pthread_self()
+        DEFINE o ID da tarefa 
+
+    perror
+
+    pthread_t =tipo para identificar thread 
+
+fork()            -> cria processo
+wait()            -> espera processo
+
+pthread_create()  -> cria thread
+pthread_join()    -> espera thread
+
+    wait()          -> espera processo filho terminar
+    pthread_join()  -> espera thread terminar  
+
+
+mutex 
+    Apenas uma thread por vez pode acessar a região crítica
+
+ptreahd_mutex_unlock
+wait() controla término de processos
+pthread_join() controla término de threads
+mutex controla acesso simultâneo a dados compartilhados
+
+
